@@ -17,7 +17,7 @@ const Favorites = () => {
     <div>
       <h2 className="text-white font-bold text-2xl mb 2">Favorite Songs</h2>
       <ul>
-        {tracks ? tracks.map( track => <SongItem tracks={track} key={track.id} /> ) : (<Loading />)}
+        {tracks ? tracks.map( track => <SongItem tracks={track} key={track.id} /> ) : ( <div>Not added yet</div>  ) }
       </ul>
     </div>
   )

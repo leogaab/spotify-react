@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className="container p-2 mx-axuto text-gray-300 mt-4">
+      <div className="container p-2 mx-auto text-gray-300 mt-4">
         <span className="text-xl font-bold">Welcome to</span>
         <h1 className="text-4xl font-extrabold">Spotisearch</h1>
         <h2 className="text-xl">Search your favorite songs over Spotify, just enter an artist's name in the following search box and enjoy!</h2>

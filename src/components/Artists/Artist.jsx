@@ -23,12 +23,12 @@ const Artist = () => {
 
   useEffect(() => {
     async function getData() {
-      const {data: artist } = await spotifyInstance.get(`/artist/${artistId}`)
+      const {data: artist } = await spotifyInstance.get(`/artists/${artistId}`)
       setArtist(artist)
-      const {data: { tracks } } = await spotifyInstance.get(`/artist/${artistId}/top-tracks?market=es`)
+      const {data: { tracks } } = await spotifyInstance.get(`/artists/${artistId}/top-tracks?market=es`)
       setArtistTopTracks(tracks)
-      const {data: { items: albums } } = await spotifyInstance.get(`/artist/${artistId}/albums`)
-      setArtistTopTracks(albums)
+      const {data: { items: albums } } = await spotifyInstance.get(`/artists/${artistId}/albums`)
+      setArtistAlbum(albums)
     }
 
     getData()
@@ -54,7 +54,7 @@ const Artist = () => {
             
             <div className="mt-3 mb-3">
               <Breadcrumb
-                // key={artist.id}
+                key={artist.id}
                 links={[
                   { to: "/artists", label: "Artists" },
                   { to: "/artists/artistId", label: `${artist.name}` },

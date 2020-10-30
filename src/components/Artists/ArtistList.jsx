@@ -16,7 +16,10 @@ const ArtistList = () => {
 
   useEffect(() => {
     spotifyInstance.get(`/search?q=${query.search}&type=artist&limit=10`)
-      .then( response => setArtists(response.data.artists.item))
+      .then( response => {
+        console.log(response.data.artists.item);
+        setArtists(response.data.artists.item) 
+      })
   }, [query.search]);
 
   return (

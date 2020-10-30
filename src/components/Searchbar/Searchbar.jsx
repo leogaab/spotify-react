@@ -17,8 +17,10 @@ const Searchbar = () => {
       <input 
         ref={searchInputRef}
         type="search"
+        name=""
+        placeholder="Type the name of your favorite artist"
         aria-placeholder="Type the name of your favorite artist"
-        className="w-11/12 rounder py-2 px-4 bg-gray-700"
+        className="w-11/12 rounded py-2 px-4 bg-gray-700"
       />
       <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounder">
         <svg className="h-4" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" fill="none">
