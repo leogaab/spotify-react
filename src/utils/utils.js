@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const token = 'BQBuZxqvEj9-9UuWRo35OcyVvZXtZrdg-XxB644nV9lg4c6EtOuE1i7omVRUHIRWkFZdg9xH3oOMUA6Gz9Y'
+export const token = 'BQBGN3pHQb565J39n9-B9rMakhmMPUVZoKXJFSkpM74dl1FKq729vc8OicVo9ZWNTj5JCvHCAE7Erh5uq2Q'
 
 export const spotifyInstance = axios.create({
   baseURL: 'https://api.spotify.com/v1/',

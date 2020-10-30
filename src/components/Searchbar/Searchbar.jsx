@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce';
 import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -7,13 +8,20 @@ const Searchbar = () => {
   const searchInputRef = useRef()
 
   const handleSubmit = e => {
-    e.preventDefault()
-    const value = searchInputRef.current.value
-    history.push('/artists?search=' + value)
+    // e.preventDefault()
+    const value = searchInputRef.current?.value
+
+    if (value) history.push('/artists?search=' + value)
+  }
+
+  const onChange = (event) => {
+    const { target: { value }} = event
+    const search = debounce(handleSubmit, 4000)
+    search(value)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full mt-4 mb-4 flex">
+    <form onKeyUp={onChange} className="w-full mt-4 mb-4 flex">
       <input 
         ref={searchInputRef}
         type="search"

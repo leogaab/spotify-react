@@ -17,8 +17,8 @@ const ArtistList = () => {
   useEffect(() => {
     spotifyInstance.get(`/search?q=${query.search}&type=artist&limit=10`)
       .then( response => {
-        console.log(response.data.artists.item);
-        setArtists(response.data.artists.item) 
+        console.log(response.data.artists.items);
+        setArtists(response.data.artists.items) 
       })
   }, [query.search]);
 
@@ -50,7 +50,7 @@ const ArtistList = () => {
                 <div className="flex flex-wrap max-w-sm">
                   <div className="flex p-3">
                     <div>
-                      <Link>
+                      <Link to={`/artists/${artist.id}`}>
                         <img src={ artist.images[0] ? artist.images[0].url : 'https://via.placeholder.com/150' } alt={artist.name} />
                       </Link>
                     </div>
@@ -60,7 +60,7 @@ const ArtistList = () => {
                         <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
                       </h5>
                       <p className="mt-2 mb-2 capitalize">
-                        { artists.genres && artists.genres.length > 1 ? artists.genres[0] + ' | ' + artists.genres[1] : artists.genres[0] }
+                        { artist && artist.genres.length > 1 ? artist.genres[0] + ' | ' + artist.genres[1] : artist.genres[0] }
                       </p>
                     </div>
 
