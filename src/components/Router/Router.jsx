@@ -4,6 +4,7 @@ import Album from '../Album/Album'
 import Artist from '../Artists/Artist'
 import ArtistList from '../Artists/ArtistList'
 import Home from '../Home/Home'
+import Login from '../Login/Login';
 
 class Router extends React.Component {
   render() { 
@@ -13,6 +14,7 @@ class Router extends React.Component {
           <Route exact path="/artists" component={ArtistList}></Route>
           <Route exact path="/artists/:artistId" component={Artist}></Route>
           <Route exact path="/artists/:artistId/:albumId" component={Album}></Route>
+          <Route exact path="/callback" component={Login}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
       </BrowserRouter>
